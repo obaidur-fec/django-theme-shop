@@ -8,7 +8,7 @@ Django payment:
 4-SSLCOMMERZ(only For Bangladesh)
 
 
-#Install:
+##Install:
 
 Create: #Virtualenv
 

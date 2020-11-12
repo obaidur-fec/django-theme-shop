@@ -1,0 +1,14 @@
+{% extends 'users/base.html'%}
+{%load static%}
+{% load crispy_forms_tags %}
+
+{% block content%}
+         
+<div class="" style="background-color:  rgb(213, 246, 248); padding: 20px; border-radius: 8px;">
+<p class="text-dark" style="font-size: 14px;">{{ object.date_posted }}</p>
+<p class="text-dark" style="font-size: 14px;">{{ object.author}}</p>
+<p class="text-dark h5">{{ object.comments_field }}</p>
+</div>
+<hr>
+
+{% endblock%}

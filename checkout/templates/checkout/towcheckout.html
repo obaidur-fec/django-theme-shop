@@ -1,0 +1,138 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+
+<form  action='https://www.2checkout.com/checkout/purchase' method='post'>
+    {% csrf_token %}
+    <input type='hidden' name='sid' value='250366411330' />
+    <input type='hidden' name='mode' value='2CO' />
+    <input type='hidden' name='li_0_name' value='test' />
+    <input type='hidden' name='li_0_price' value='1.00' />
+<!-- <input type='hidden' name='privateKey' value='F458BBC1-035B-4D66-B1E3-1AC2FDAD547D' />
+    <input type='hidden' name='merchantOrderId' value='123' />
+    <input type='hidden' name='token' value='cdefa07d-0595-4469-8aa8-c54d2edd445f' />
+    <input type='hidden' name='currency' value='USD' />
+    <input type='hidden' name='total' value='0.01' />
+    <input name='hidden' type='billingAddr[name]' value='John Doe' />
+    <input type='hidden' name='billingAddr[addrLine1]' value='123 Test St' />
+    <input type='hidden' name='billingAddr[city]' value='Columbus' />
+    <input type='hidden' name='billingAddr[state]' value='Ohio' />
+    <input type='hidden' name='billingAddr[zipCode]' value='43123' />
+    <input type='hidden' name='billingAddr[country]' value='USA' />
+    <input name='hidden' type='billingAddr[email]' value='example@2co.com' />
+    <input name='hidden' type='billingAddr[phoneNumber]' value='5555555555' /> -->
+    <input name='hidden' type='demo' value='true' />
+    <input name='submit' type='submit' value='Checkout' />
+    </form>
+
+
+<!-- <form name="ajaxform" id="ajaxform" method="POST" action="https://www.2checkout.com/checkout/purchase">
+    {% csrf_token %}
+    <input type="text" name="fname" value =""/> <br/>
+    <input type="text" name="lname" value ="" /> <br/>
+    <input type="text" name="email" value=""/> <br/>
+<input type="submit" class="btn btn-info" id="simplepost" value="Run Code">
+</form>
+ -->
+
+<!-- <script>
+$(document).ready(function(){
+$("#simplepost").click(function(e)
+{
+var MyForm = $("#ajaxform").serializeJSON();
+console.log(MyForm);
+ $.ajax(
+ {
+ url : "https://www.2checkout.com/checkout/purchase",
+ type: "POST",
+ data : {valArray:MyForm},
+ success:function(maindta)
+ {
+
+alert(maindta);
+
+ },
+ error: function(jqXHR, textStatus, errorThrown)
+ {
+ }
+ });
+ e.preventDefault(); //STOP default action
+
+});
+});
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+ {
+    "sellerId": "250366411330",
+    "privateKey": "F458BBC1-035B-4D66-B1E3-1AC2FDAD547D",
+    "merchantOrderId": "123",
+    "token": "cdefa07d-0595-4469-8aa8-c54d2edd445f",
+    "currency": "USD",
+    "total": "0.01",
+    "billingAddr": {
+        "name": "John Doe",
+        "addrLine1": "123 Test St",
+        "city": "Columbus",
+        "state": "Ohio",
+        "zipCode": "43123",
+        "country": "USA",
+        "email": "example@2co.com",
+        "phoneNumber": "5555555555"
+    },
+    "demo": true
+    }
+
+    </script>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+    <!-- <script src={% static 'checkout/index.js' %}></script> -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags%}
+{% block content %}
+
+<style> .mycard{margin-top: 100px;} </style>
+<div class="card ml-auto mr-auto mycard" style="width: 25rem;">
+    <div class="card-body">
+      <h4 class="card-title text-success  text-center">Login to your account</h4>
+      <p class="card-title text-muted text-center text-small">Or Continue With </p>
+      <button type="submit" class="btn btn-info btn-block "><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</button>
+      <button type="submit" class="btn btn-dark btn-block "><i class="fa fa-google-plus" aria-hidden="true"></i> Google</button>
+      <button type="submit" class="btn btn-danger btn-block mb-3"> <i class="fa fa-instagram" aria-hidden="true"></i> Instagram</button>
+      <div>
+          <form action="" method="POST">
+              {% csrf_token%}
+              {{form|crispy}}
+            <button type="submit" class="btn btn-success btn-block mb-3">Login</button>
+          </form>
+      </div>
+      <a href="#" class="card-link text-muted">Don't you hava an account ?</a>
+      <a href="{% url 'users-register' %}" class="card-link">SignUp</a><hr>
+      <a href="#">Forgot password?</a>
+    </div>
+  </div>
+
+{% endblock %}

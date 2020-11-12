@@ -1,0 +1,71 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+
+<main class="container">
+
+ {% if  empty %} <!-- If there is no cart objects -->
+ <table class="table mt-5">
+  <tbody>
+   <tr>
+     <td class="h1 text-danger mt-5">{{ empty_massage }}</td>
+   </tr>
+   <tr>
+     <td colspan="5"><a class='btn btn-danger float-right' href="{% url 'pro_theme:product_list' %}">Continue shopping</a></td>
+   </tr>
+  </tbody>
+ </table>
+ {% else %} <!-- Otherwasy it will continue under this Statemant -->
+
+ <h4 class="text-success font-weight-bold mt-5">Cart List View</h4>
+
+<table class="table">
+ <thead>
+  <tr class="text-success">
+    <th scope="col">#</th>
+    <th scope="col">Image</th>
+    <th scope="col">Theme Name</th>
+    <th scope="col">Author Name</th>
+    <th scope="col">Item Price</th>
+  </tr>
+ </thead>
+
+ <tbody>
+  {% for i in cart.products.all %} <!-- Start For loop -->
+   <tr>
+    <th scope="row">{{ forloop.counter }}</th>
+    <td><img src="{{i.images.url}}" height="50px" width="50px" alt=""></td>
+    <td>{{ i.theme_name }}</td>
+    <td>{{ i.author_name }}</td>
+    <td>$ {{ i.price }}</td>
+    <td><a href="{% url 'Cart:remove_from_cart' i.slug %}" type="submit" class="btn btn-success">remove</a></td>
+   </tr>
+
+  {% empty %} <!-- If there is no cart objects --> 
+    <tr>
+    <td class="h1">Your cart is empty</td>
+    </tr>
+    <tr>
+    <td colspan="5">
+    <a class='btn btn-primary float-right' href="{% url 'pro_theme:product_list' %}">Continue shopping</a>
+    </td>
+    </tr>
+  {% endfor %} <!-- End For Loop -->
+ </tbody>
+</table>
+
+ <div class="container">
+   <a class="font-weight-bold text-danger mt-3 h4"> Total = ${{cart.cart_price}}</a>
+   <a class='btn btn-danger mt-3 btn-block' href="{% url 'checkout:pyment_checkout' %}">Checkout</a>
+ </div>
+
+</main>
+
+{% endif %} <!-- End If Statemant [This is come from line 7] -->
+
+{% endblock %}
+
+
+
+
+                        

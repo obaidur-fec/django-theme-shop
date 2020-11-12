@@ -1,0 +1,213 @@
+{% extends "users/base.html" %}
+{% block content %}
+{% load static %}
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://scripts.sandbox.bka.sh/versions/1.2.0-beta/checkout/bKash-checkout-sandbox.js"></script>
+
+
+<style type="text/css">
+
+  /**
+   * The CSS shown here will not be introduced in the Quickstart guide, but shows
+   * how you can use CSS to style your Element's container.
+   */
+  .StripeElement {
+    box-sizing: border-box;
+
+    height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+  #main-container{
+    margin-top: 1rem;
+    
+  }
+
+  #section-container{
+    margin-top: 5rem; 
+  }
+
+  .sumbitbutton{
+    margin-top: 2rem;
+  }
+  .card-body{
+  border: 1px solid green;
+  }
+
+  .table{
+    display: block;
+  }
+</style>
+
+
+<section class="container" id= "section-container" >
+ <legend>Select Your Pyment Option</legend>
+
+  <div class="row">
+    <div class="col">
+    <a class='btn btn-danger  mt-3 btn-lg font-weight-bold' href="{% url 'checkout:Bkash_pyment' %}">Bkash 
+    <small class="text-light">(Only For Bangladesh)</small></a>
+    <a class='btn btn-primary mt-3 btn-lg font-weight-bold' href="{% url 'checkout:paypal_payment' %}"> <i class="fab fa-cc-paypal"></i> Paypal</a>
+    <a class='btn btn-success mt-3 btn-lg font-weight-bold' href="{% url 'checkout:Sslcommerz_payment' %}">Skrill</a>
+    </div>
+  </div>
+
+</section>
+
+<main class="container" id= "main-container">
+  <div class="card">
+      <div class="card-body">
+          <small class="text-muted">Defult Payment Getway</small>
+          <legend class="text-center">Payment</legend>
+        <form action="{% url 'checkout:pyment_charge' %}" method="POST" id="payment-form">
+         
+          {% csrf_token %}
+
+          <div id="card-element"> class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: medium none !important; display: block !important; background: transparent none repeat scroll 0% 0% !important; position: relative !important; opacity: 1 !important; --darkreader-inline-border-top:currentcolor; --darkreader-inline-border-right:currentcolor; --darkreader-inline-border-bottom:currentcolor; --darkreader-inline-border-left:currentcolor; --darkreader-inline-bgcolor:transparent; --darkreader-inline-bgimage:none;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage=""><iframe allowtransparency="true" scrolling="no" name="__privateStripeFrame5" allowpaymentrequest="true" src="https://js.stripe.com/v3/elements-inner-card-83a59ceb354cf6b4d83e2f05092ccde2.html#style[base][color]=%2332325d&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;componentName=card&amp;wait=false&amp;rtl=false&amp;keyMode=test&amp;apiKey=pk_test_LCzqvCsWzUHNnVGcDzy5mA7P00DmIIwHMA&amp;origin=https%3A%2F%2Fstripe.com&amp;referrer=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;controllerId=__privateStripeController1" title="Secure payment input frame" style="border: medium none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; height: 19.2px; --darkreader-inline-border-top:currentcolor; --darkreader-inline-border-right:currentcolor; --darkreader-inline-border-bottom:currentcolor; --darkreader-inline-border-left:currentcolor;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" frameborder="0"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: medium none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent none repeat scroll 0% 0% !important; pointer-events: none !important; font-size: 16px !important; --darkreader-inline-border-top:currentcolor; --darkreader-inline-border-right:currentcolor; --darkreader-inline-border-bottom:currentcolor; --darkreader-inline-border-left:currentcolor; --darkreader-inline-bgcolor:transparent; --darkreader-inline-bgimage:none;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage=""></div>
+
+          <!-- Used to display form errors. -->
+          <div id="card-errors" role="alert"></div>
+
+          <button class="btn btn-success btn-block btn-bg sumbitbutton">Submit Payment</button>
+        </form>
+
+    </div>
+  </div>
+
+
+<table class="table mt-3">
+  <thead>
+    <tr class="text-success">
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+      <th scope="col">Theme Name</th>
+      <th scope="col">Author Name</th>
+      <th scope="col">Item Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in cart.products.all %}
+    <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td><img src="{{i.images.url}}" height="50px" width="50px" alt=""></td>
+        <td>{{ i.theme_name }}</td>
+        <td>{{ i.author_name }}</td>
+        <td>$ {{ i.price }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <hr>
+    <a class="font-weight-bold text-success h4"> Total = ${{cart.cart_price}} </a>
+    <hr>
+  </tfoot>
+</table>
+
+
+
+</main>
+
+
+<script type="text/javascript">
+
+  // Create a Stripe client.
+  var stripe = Stripe('pk_test_LCzqvCsWzUHNnVGcDzy5mA7P00DmIIwHMA');
+
+  // Create an instance of Elements.
+  var elements = stripe.elements();
+
+  // Custom styling can be passed to options when creating an Element.
+  // (Note that this demo uses a wider set of styles than the guide below.)
+  var style = {
+    base: {
+      color: '#32325d',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': {
+        color: '#aab7c4'
+      }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+
+  // Create an instance of the card Element.
+  var card = elements.create('card', {style: style});
+
+  // Add an instance of the card Element into the `card-element` <div>.
+  card.mount('#card-element');
+
+  // Handle real-time validation errors from the card Element.
+  card.addEventListener('change', function(event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+    }
+  });
+
+  // Handle form submission.
+  var form = document.getElementById('payment-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    stripe.createToken(card).then(function(result) {
+      if (result.error) {
+        // Inform the user if there was an error.
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        // Send the token to your server.
+        stripeTokenHandler(result.token);
+      }
+    });
+  });
+
+  // Submit the form with the token ID...
+  function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+
+    // Submit the form
+    form.submit();
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" 
+integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" 
+crossorigin="anonymous">
+</script>
+
+
+{% endblock%}

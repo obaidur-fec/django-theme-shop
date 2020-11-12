@@ -1,0 +1,218 @@
+.navbar ul li a {
+  color:darkslategray;
+  font-weight: bold;
+  font-size: 16px;
+}
+.mynav{
+  background-color: #000000f8;
+}
+
+nav ul li a ,
+nav ul li a:after,
+nav ul li a:before {transition: all .5s;}
+nav ul li a:hover {color:  red;}
+ul.navbar-nav li a{position: relative;}
+ul.navbar-nav li a:after{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 0%;
+	content: '.';
+	color: transparent;
+	background: red;
+	height: 2.5px;
+}
+ul.navbar-nav li a:hover:after{width: 100%;}
+
+/*End Navigation Bar Hover Effect Stroke*/
+
+/* .navbar{background: transparent;}
+#navbarcollapse ul li a:hover{
+  color:gold;
+  box-shadow: 0px 0px 4px 1px #fa030385;
+  text-shadow: 0px 0px 1px rgb(243, 2, 2);
+} */
+
+.carousel-item:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  background:black;
+  opacity: 0.6;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+
+.sidenav {
+  position: absolute;
+  right: 0;
+  width: 0px;
+  margin-top: -10rem;
+  display: none;
+  z-index: 999;
+  background: transparent;
+  box-shadow: -10px 10px 512px 256px #000000;
+  transition: .5s;
+  /* .flex-column */
+  -webkit-box-orient: vertical!important;
+  -webkit-box-direction: normal!important;
+  -ms-flex-direction: column!important;
+  flex-direction: column!important;
+}
+
+.navbar-toggler{
+  color: green;
+  font-size:25px;
+  box-shadow: 0px 0px 4px 2px #ffffff96;
+}
+
+.navbar-toggler:hover {
+  box-shadow: 0px 0px 4px 2px #ff040485;
+  text-shadow: 0px 0px 2px white;
+}
+
+.sidenav .nav-link {
+  color: green;
+  white-space: nowrap;
+  transition: .3s;
+  font-weight: bold;
+}
+.sidenav .nav-link:hover {
+  background-color: #ff000066;
+  color: gold;
+  
+}
+
+@media only screen and (min-width: 1080px){
+ .carousel-caption{
+   margin-bottom: 80px;
+   font-weight: bold;
+ }
+.text-1{
+   font-size: 35px;
+   color: #000000;
+ }
+.text-2{
+   font-size: 25px;
+ }
+}
+
+
+
+
+@media only screen and (min-width: 769px) and (max-width : 1080px) {
+ .carousel-caption{
+   margin-bottom: 40px;
+   font-weight: bold;
+ }
+.text-1{
+   font-size: 20px;
+   color: #000000;
+ }
+.text-2{
+   font-size: 15px;
+ }
+}
+
+
+
+
+@media only screen and  (max-width : 801px){
+  .overlay{
+    display: none;
+  }
+}
+
+
+
+/* Hover Image */
+@media only screen and (min-width: 801px) {
+
+.hovereffect {
+  float: left;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  cursor: default;
+}
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  /* background-color: rgba(0,0,0,0.6); */
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: translate(460px, -100px) rotate(180deg);
+  -ms-transform: translate(460px, -100px) rotate(180deg);
+  transform: translate(460px, -100px) rotate(180deg);
+  -webkit-transition: all 0.2s 0.4s ease-in-out;
+  transition: all 0.2s 0.4s ease-in-out;
+}
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: rgb(250, 0, 0);
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.575);
+  font-weight: bold;
+}
+.hovereffect a.info {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  text-transform: uppercase;
+  /* color: rgb(248, 8, 8); */
+  /* border: 1px solid rgb(255, 4, 4); */
+  /* background-color: white; */
+  margin: 40px 0 0 0;
+  /* background-color: transparent; */
+  -webkit-transform: translateY(-200px);
+  -ms-transform: translateY(-200px);
+  transform: translateY(-200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+}
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+.hovereffect:hover h2 {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.hovereffect:hover a.info {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+}
+
+
+
+
+

@@ -1,0 +1,357 @@
+{% load static %}
+
+<style>
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  
+  .imagehover:hover .overlay {
+    width: 100%;
+    left: 0;
+  }
+  
+  .text {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+
+  .text .author {
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    position: absolute;
+    top: 40%;
+    left: 28%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+ 
+  .allbutton{
+     text-align: center;  
+  }
+  
+  @media only screen and  (min-width : 801px){
+    .live_privew{
+      display: none;
+    }
+  }
+</style>
+
+
+<div class="container"> <!--Start Container -->
+  <div class="allbutton">
+    <button class="catagory_item btn font-weight-bold btn-sm btn-outline-success active" id="all">All</button>
+    <button class="catagory_item btn font-weight-bold btn-sm btn-outline-success" id="Bootstrap">Bootstrap</button>
+    <button class="catagory_item font-weight-bold btn btn-sm btn-outline-success" id="Food/Drinks">Food/Drinks</button>
+    <button class="catagory_item font-weight-bold btn btn-sm btn-outline-success" id="Blog">Blog</button>
+    <button class="catagory_item font-weight-bold btn btn-sm btn-outline-success" id="Fashion">Fashion</button>
+    <button class="catagory_item font-weight-bold btn btn-sm btn-outline-success" id="Portfolio">Portfolio</button>
+    
+    <button class="catagory_item font-weight-bold btn btn-sm btn-outline-success" id="Resume">Resume</button>
+    <button class="catagory_item font-weight-bold btn btn-sm btn-outline-success" id="eCommerce">eCommerce</button> 
+    <button class="catagory_item btn font-weight-bold btn-sm btn-outline-success" id="Gallery">Gallery</button>
+    <button class="catagory_item btn font-weight-bold btn-sm btn-outline-success" id="Photography">Photography</button>
+    <button class="catagory_item btn font-weight-bold btn-sm btn-outline-success" id="Login_Forms">Login_Forms</button>
+    <button class="catagory_item btn font-weight-bold btn-sm btn-outline-success" id="Snippet">Snippet</button>
+    <button class="catagory_item btn font-weight-bold btn-sm btn-outline-success" id="Hotel">Hotel</button> 
+  </div>
+
+  <hr class="mt-0 mb-4">
+  <div class="row"> <!--Start Row -->
+
+    <!-- Bootstrap Templates -->
+    <div class="col filter Bootstrap "> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/theevent.jpg' %} alt="Avatar" >
+        <div class="overlay">
+          <div class="text">
+            <p>The Event Boostrap Free Template</p>
+            <p class="author text-bold">Author: BootstrapMade.com</p>
+            <hr>
+            <a href="{% url 'blog_store:theeventrfreebootstrapmade' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:theeventrfreebootstrapmade' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+
+    <div class="col filter Bootstrap"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/devfolio.jpg' %} alt="Avatar" >
+        <div class="overlay">
+          <div class="text">
+            <p>The DevFolio Is A Portfolio Template</p>
+            <p class="author text-bold">Author: BootstrapMade.com</p>
+            <hr>
+            <a href="{% url 'blog_store:devfoliobootstrapmade' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:devfoliobootstrapmade' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+
+    <div class="col filter Bootstrap"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/estateagency.jpg' %} alt="Avatar" >
+        <div class="overlay">
+          <div class="text">
+            <p>EstateAgency Free Boostrap Template </p>
+            <p class="author text-bold">Author: BootstrapMade.com</p>
+            <hr>
+            <a href="{% url 'blog_store:estateagencybootstrapmade' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:estateagencybootstrapmade' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+    
+  <!-- end Bootstrap Templates -->
+
+  </div> <!--End Row -->
+
+  <hr class="mt-5 mb-5"> <!--Brack Through The row -->
+
+  <!-- Other_web_sites--------------- -->
+
+  <div class="row"> <!--Start Row -->
+
+   <!--  Templates -->
+
+    <div class="col filter eCommerce"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/sleek.jpg' %} alt="Avatar" > 
+        <div class="overlay">
+          <div class="text">
+            <p>Sleek Dashboard Free Templates</p>
+            <p class="author text-bold">Author: Github</p>
+            <hr>
+            <a href="{% url 'blog_store:sleekfreedashboard' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:sleekfreedashboard' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+    <div class="col filter Blog"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/Adalot.jpg' %} alt="Avatar" > 
+        <div class="overlay">
+          <div class="text">
+            <p>Adalot Personal Free Boostrap Templates</p>
+            <a href="{% url 'blog_store:adalotfreepersonal' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:adalotfreepersonal' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+  </div> <!--End Row -->
+  <!--End Blog Templates -->
+
+  <hr class="mt-5 mb-5"> <!--Brack Through The row -->
+
+  <div class="row"> <!--Start Row -->
+
+    <div class="col filter Bootstrap"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/eleganter.jpg' %} alt="Avatar" >        
+        <div class="overlay">
+          <div class="text">
+            <p>Eleganter Free Boostrap Template </p>
+            <!-- <p class="author text-bold">Author: UnKnown</p> -->
+            <!-- <hr> -->
+            <a href="{% url 'blog_store:eleganter' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:eleganter' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+    <!-- End Other_web_sites--------------- -->
+
+    <!-- Colorlib-------------------- -->
+
+    <div class="col filter eCommerce"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/amin.jpg' %} alt="Avatar" > 
+        <div class="overlay">
+          <div class="text">
+            <p>Amin Free Templates</p>
+            <p class="author text-bold">Author: Colorlib.com</p>
+            <hr>
+            <a href="{% url 'blog_store:amincolorlib' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:amincolorlib' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+    <div class="col filter Bootstrap"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/city.jpg' %} alt="Avatar" > 
+        <div class="overlay">
+          <div class="text">
+            <p>City Listing Free Boostrap Template</p>
+            <p class="author text-bold">Author: Colorlib.com</p>
+            <hr>
+            <a href="{% url 'blog_store:citylistingcolorlib' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:citylistingcolorlib' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+  </div> <!--End Row -->
+
+  <hr class="mt-5 mb-5"> <!--Brack Through The row -->
+
+  <div class="row"> <!-- Start row -->
+
+    <div class="col filter Blog"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/hazze.jpg' %} alt="Avatar" > 
+        <div class="overlay">
+          <div class="text">
+            <p>Hazze Fastion Boostrap Free Template</p>
+            <p class="author text-bold">Author: Colorlib.com</p>
+            <hr>
+            <a href="{% url 'blog_store:hazzecolorlib' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:hazzecolorlib' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+
+    <div class="col filter eCommerce"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/jobfinder.jpg' %} alt="Avatar" >         
+        <div class="overlay">
+          <div class="text">
+            <p>Job Finder Portal Free Boostrap Template </p>
+            <p class="author text-bold">Author: Colorlib.com</p>
+            <hr>
+            <a href="{% url 'blog_store:jobfinderportalcolorlib' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:jobfinderportalcolorlib' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+    
+
+  </div> <!-- End row -->
+
+  <hr class="mt-5 mb-5"> <!--Brack Through The row -->
+
+  <div class="row"> <!-- Start row -->
+   
+    <div class="col filter Bootstrap"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/freebie.jpg' %} alt="Avatar" >        
+        <div class="overlay">
+          <div class="text">
+            <p>Freebie Free Boostrap Template </p>
+            <!-- <p class="author text-bold">Author: </p>
+            <hr> -->
+            <a href="{% url 'blog_store:freebie' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:freebie' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+    <div class="col filter Bootstrap"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/freebie.jpg' %} alt="Avatar" >        
+        <div class="overlay">
+          <div class="text">
+            <p>Freebie Free Boostrap Template </p>
+            <!-- <p class="author text-bold">Author: </p>
+            <hr> -->
+            <a href="{% url 'blog_store:freebie' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:freebie' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+
+    <div class="col filter Bootstrap"> <!--Start Col -->
+      <div class="imagehover">
+        <img class="image" src={% static 'blog_store/theme_images/freebie.jpg' %} alt="Avatar" >        
+        <div class="overlay">
+          <div class="text">
+            <p>Freebie Free Boostrap Template </p>
+            <!-- <p class="author text-bold">Author: </p>
+            <hr> -->
+            <a href="{% url 'blog_store:freebie' %}" class="btn btn-outline-success"> Live Privew</a>
+            <a href="" class="btn btn-outline-success"> Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="{% url 'blog_store:freebie' %}" class="live_privew btn btn-block btn-sm mt-2 btn-outline-success"> Live Privew</a>
+    </div> <!--End Col -->
+
+  </div> <!-- End row -->
+
+  <hr class="mt-5 mb-5"> <!--Brack Through The row -->
+
+</div> <!--End Container -->
+
+<hr class="mt-5 mb-5">
+<div class="container"> <!-- /.container -->
+  <p class="text-muted">Disclosure: This page contains external affiliate links that may result in us receiving a
+      commission if you choose to
+      purchase mentioned product. The opinions on this page are our own and we don't receive additional bonus for
+      positive
+      reviews.</p>
+  <hr class="mt-5 mb-5">
+</div> <!-- /.container -->
+
+<script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" 
+integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" 
+crossorigin="anonymous">
+</script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" 
+		integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" 
+		crossorigin="anonymous">
+</script> -->
+<script src={% static 'blog/js/main.js' %}></script>
+<script type="text/javascript"> $('.allbutton .catagory_item').categoryFilter(); </script>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Bkash</title>
+  <meta name="viewport" content="width=device-width" ,="" initial-scale="1.0/">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrom=1">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+
+  <script src="https://scripts.sandbox.bka.sh/versions/1.2.0-beta/checkout/bKash-checkout-sandbox.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="container mr-5" style="margin-top: 10rem;">
+
+    <img class="img-fluid" style="height: 100px; width: auto;"      
+    src="https://cdn.jagonews24.com/media/imgAllNew/BG/2016April/bkash-large20160424110715.jpg">
+    <hr>
+    <div><button class="btn btn-danger btn-lg" id="bKash_button">Pay With bKash</button></div>
+
+  </div>
+
+  <div class="container mt-2 mr-5 font-weight-bold"><hr>
+    <p>
+      You will be redirected to bKash website to complete your payment. Please take note of the following before you proceed:<hr>
+      1. You have an activated bKash account<br>
+      2. Ensure you have sufficient balance in your bKash account to cover the total cost of the order<br>
+      3. Ensure you are able to receive your OTP (one-time-password) on your mobile and have bKash PIN
+    </p>
+  </div>
+
+{% for i in cart.products.all %} <!-- Start For loop -->
+
+{% endfor %} <!-- End for loop -->
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+    var paymentConfig={
+    createCheckoutURL:"https://merchantserver.sandbox.bka.sh/api/checkout/v1.2.0-beta/payment/create/",
+    executeCheckoutURL:"https://merchantserver.sandbox.bka.sh/api/checkout/v1.2.0-beta/payment/execute/",
+    };
+  
+    var a = {{cart.cart_price}} //Django variable
+    var paymentRequest;
+    paymentRequest = { amount: a * 30 ,intent:'sale'};
+    console.log(JSON.stringify(paymentRequest));
+
+    var paymentID = '01863043638';
+
+    bKash.init({
+    paymentMode: 'checkout',
+    paymentRequest: paymentRequest,
+    createRequest: function(request){
+        console.log('=> createRequest (request) :: ');
+        console.log(request);
+
+        $.ajax({
+            url: paymentConfig.createCheckoutURL,
+            type:'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(request),
+            success: function(data) {
+                console.log('got data from create  ..');
+                console.log('data ::=>');
+                console.log(JSON.stringify(data));
+                console.log(paymentID)
+
+                if(data && data.paymentID != null){
+                    paymentID = data.paymentID;
+                    bKash.create().onSuccess(data);
+                }
+                else {
+      console.log('error');
+                    bKash.create().onError();
+                }
+            },
+            error: function(){
+    console.log('error');
+                bKash.create().onError();
+            }
+        });
+    },
+
+    executeRequestOnAuthorization: function(){
+        console.log('=> executeRequestOnAuthorization');
+        $.ajax({
+            url: paymentConfig.executeCheckoutURL,
+            type: 'POST',
+            contentType:'application/json',
+            data: JSON.stringify({ "paymentID": paymentID }),
+            success: function(data){
+                console.log('got data from execute  ..');
+                console.log('data ::=>');
+                console.log(JSON.stringify(data));
+                //document.getElementById("demo4").innerHTML = data;
+                if(data && data.paymentID != null){
+                    alert('[SUCCESS] data : ' + JSON.stringify(data));var value1=data.paymentID;
+                    var value1=data.paymentID;
+                    var value2=data.trxID;
+                    var value3=data.amount;
+                    var queryString = "?Payment ID = " + value1 + "&Transaction ID = " + value2+ "&Amount = " + value3;
+                    window.location.href = "file:///android_asset/www/checkoutSuccess.html"+ queryString;
+                }
+                else {
+                    bKash.execute().onError();
+                }
+            },
+            error: function(){
+                bKash.execute().onError();
+            }
+        });
+    }
+    });
+
+
+    });
+
+           function callReconfigure(val){
+             bKash.reconfigure(val);
+             }
+
+             function clickPayButton(){
+             $("#bKash_button").trigger('click');
+             }
+
+</script>
+
+
+</body>
+</html>

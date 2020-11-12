@@ -1,0 +1,47 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% load crispy_forms_tags%}
+{% block content %}
+
+<link rel="stylesheet" href={% static 'users/css/style.css' %}>
+
+<div class="main">
+  <!-- Sing in  Form -->
+  <section class="sign-in">
+    <div class="container">
+      <div class="signin-content">
+        <div class="signin-image">
+          <figure><img src={% static 'users/images/signup-image.jpg' %} alt="sing up image"></figure>
+          <div class="mt-2">
+            <p class="h4 font-weight-bold text-danger text-center mb-3">Or Join with us</p>
+            <button type="submit" class="btn btn-info btn-block "><i class="fa fa-facebook-square"
+                aria-hidden="true"></i> Continue with Facebook</button>
+            <button type="submit" class="btn btn-dark btn-block "><i class="fa fa-google-plus" aria-hidden="true"></i>
+              Continue with Google</button>
+            <button type="submit" class="btn btn-danger btn-block mb-3"> <i class="fa fa-instagram"
+                aria-hidden="true"></i> Continue with Instagram</button>
+          </div>
+        </div>
+
+        <div class="">
+          <h2 class="form-title font-weight-bold text-success h2 text-center">Sign up</h2>
+          <h6 class="card-subtitle mb-4 text-muted text-center">Register and stay with us</h6>
+          <div>
+            <form action="" method="POST">
+                {% csrf_token%}
+                {{form|crispy}}
+              <button type="submit" class="btn btn-success btn-block mb-3">Login</button>
+            </form>
+        </div>
+        <a href="#" class="card-link text-muted">Already have a DarkWhisper account? ?</a>
+        <a href="{% url 'users-login' %}" class="card-link">Login</a>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{% endblock %}

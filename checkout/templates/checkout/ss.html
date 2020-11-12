@@ -1,0 +1,30 @@
+
+{{ post_body }}
+<form id="payment_gw" name="payment_gw" method="POST" action="https://sandbox.sslcommerz.com/gwprocess/v4/api.php" >
+  <input type="submit" name="pay">
+
+  {% for i in post_body %}
+  <input type="hidden" name="{{ post_body }}">
+  {% endfor %}
+
+</form>
+
+  <button class="your-button-class" id="sslczPayBtn"
+     token="if you have any token validation"
+     postdata="{{ post_body }}"
+     order="If you already have the transaction generated for current order"
+     endpoint="https://sandbox.sslcommerz.com/validator/api/merchantTransIDvalidationAPI.php"> Pay Now
+  </button>
+
+  <script type="text/javascript">
+
+(function (window, document) {
+  var loader = function () {
+      var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+      script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+      tag.parentNode.insertBefore(script, tag);
+  };
+
+  window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+})(window, document);
+ </script>

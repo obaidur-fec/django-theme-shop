@@ -1,0 +1,52 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+    
+
+
+<div class="container mt-5" style="margin-left: 11rem;">
+    <h4>Latest</h4>
+    <p>Most recently added to our collection.</p>
+</div>
+
+    {% for i in product_show %}
+
+<style>
+    .center {
+        margin-right: -150px;
+        display: inline-block;
+        margin-left: 185px;
+        margin-bottom: 2rem;
+      }
+</style>
+
+<div class="center">
+               
+    <div class="card">
+        <img class="card-img-top" height="300px" width="350px" src="{{i.images.url}}" alt="Card image cap">
+        <div class="card-body">
+            <a href="{% url 'pro_theme:product_discription' i.slug %}" class="h5">{{ i.theme_name }}  <span class="float-right badge badge-success badge-pill ml-3"><span class="">Price</span> ${{ i.price }}</span></a>
+            <h6 class="text-secondary mt-1">Created By {{ i.author_name}}</h6>
+            <h6 class="mt-2 text-secondary">Published {{i.date_added}}</h6>
+            <div class="row">
+              <div class="col">
+                  <a class="btn btn-success btn-block btn-small mt-2 text-light"> <i class="fa fa-product-hunt" aria-hidden="true"></i> Live Preview</a>
+              </div>
+              <div class="col">           
+                    <a href="{% url 'Cart:add_to_cart' i.slug %}" class="btn btn-success btn-block btn-small mt-2 text-light"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</a>   
+              </div>
+
+            </div>
+        </div>
+    </div>
+          
+</div>
+
+  
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

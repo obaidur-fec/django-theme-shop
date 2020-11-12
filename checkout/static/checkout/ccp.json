@@ -1,0 +1,3704 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Operations a client can do with CCP API",
+    "version": "9.18.0.RC2_20190920150654_5786d844abb8",
+    "title": "CCP Sandbox",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "host": "developers.wirecard.com",
+  "basePath": "/dev-portal/mocks/ccp/rest-api",
+  "tags": [
+    {
+      "name": "Endpoints"
+    }
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v3/{brandName}/user/{loginAlias}/cards-summary": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "getCardListingV3",
+        "operationId": "getCardListingV3UsingGET",
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CardListingResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{brandName}/user/{loginAlias}/top-up": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "doTopup",
+        "operationId": "doTopupUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TopupRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TopupResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{brandName}/user/{loginAlias}/email-address-change": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "changeEmail",
+        "operationId": "changeEmailUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EmailAddressChangeRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/EmailAddressChangeResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{brandName}/user/{loginAlias}/send-money-bankaccount/{send-money-bankaccount-ref-id}": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "doSendMoneyToBankAccount",
+        "operationId": "doSendMoneyToBankAccountUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SendMoneyBankAccountRequest"
+            }
+          },
+          {
+            "name": "send-money-bankaccount-ref-id",
+            "in": "path",
+            "description": "send-money-bankaccount-ref-id",
+            "required": true,
+            "type": "string",
+            "default": "00001"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SendMoneyBankAccountResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{brandName}/user/{loginAlias}/credit-cards": {
+      "post": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "register",
+        "operationId": "registerUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegisterCreditCardRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RegisterCreditCardResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v2/{brandName}/user/{loginAlias}/transactions-lite-list": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "listV2",
+        "operationId": "listV2UsingGET",
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TransactionsLiteListResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v3/{brandName}/user/{loginAlias}/send-money-p2p/{send-money-p2p-ref-id}": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "sendMoneyP2PV3",
+        "operationId": "sendMoneyP2PV3UsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SendMoneyP2PRequest"
+            }
+          },
+          {
+            "name": "send-money-p2p-ref-id",
+            "in": "path",
+            "description": "send-money-p2p-ref-id",
+            "required": true,
+            "type": "string",
+            "default": "00001"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SendMoneyP2PResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v2/{brandName}/user/{loginAlias}/update-personal-data": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "updatePersonalDataV2",
+        "operationId": "updatePersonalDataV2UsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUserProfilePersonalDataRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserProfilePersonalDataResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v3/{brandName}/user/{loginAlias}/bank-accounts": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "getValidatedBankAccountsV3",
+        "operationId": "getValidatedBankAccountsV3UsingGET",
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BankAccountsResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v5/{brandName}/user/{loginAlias}/profile": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "getUserProfileV5",
+        "operationId": "getUserProfileV5UsingGET",
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UserProfileResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v2/{brandName}/user/{loginAlias}/update-address": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "updateUserAddress_v2",
+        "operationId": "updateUserAddress_v2UsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUserOrShippingAddressRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserAddressResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v2/{brandName}/user/{loginAlias}/card/{reference}": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "getCardDetailsForReferenceV2",
+        "operationId": "getCardDetailsForReferenceV2UsingGET",
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "name": "reference",
+            "in": "path",
+            "description": "reference",
+            "required": true,
+            "type": "string",
+            "default": "00001"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CardDetailsResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v2/{brandName}/user/{loginAlias}/mobile-info": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "putMobileInfoV2",
+        "operationId": "putMobileInfoV2UsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MobileInfoRequestV2"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MobileInfoResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{brandName}/user/{loginAlias}/bank-account-registration": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "registerBankAccount",
+        "operationId": "registerBankAccountUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegisterBankAccountRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RegisterBankAccountResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v2/{brandName}/user/{loginAlias}/credit-cards": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "getCardDetailsV2",
+        "operationId": "getCardDetailsV2UsingGET",
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CreditCardsResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v7/{brandName}/register-user": {
+      "put": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "registerUserV7",
+        "operationId": "registerUserV7UsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegisterUserRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v13/{brandName}/user/{loginAlias}": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "getUserV13",
+        "operationId": "getUserV13UsingGET",
+        "parameters": [
+          {
+            "name": "brandName",
+            "in": "path",
+            "description": "brandName",
+            "required": true,
+            "type": "string",
+            "default": "brandName"
+          },
+          {
+            "name": "loginAlias",
+            "in": "path",
+            "description": "loginAlias",
+            "required": true,
+            "type": "string",
+            "default": "loginAlias"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": true,
+            "type": "string",
+            "default": "Bearer 88ed9c88214a24ac1be75860ffa6c2b7d1fe035b842b6df778a315e955f6c77c"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UserResponse"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "TransactionsLiteListItem": {
+      "type": "object",
+      "required": [
+        "amount",
+        "is-credit",
+        "reference-type"
+      ],
+      "properties": {
+        "booking-date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The booking date in UTC (YYYY-MM-ddThh:mm:ssZ)."
+        },
+        "amount": {
+          "description": "The amount, in account currency.",
+          "$ref": "#/definitions/MoneyType"
+        },
+        "transaction-date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The transaction date in UTC (YYYY-MM-ddThh:mm:ssZ)."
+        },
+        "is-credit": {
+          "type": "boolean",
+          "description": "Returns true if credit, false if debit"
+        },
+        "details": {
+          "type": "string",
+          "description": "Transaction details in JSON format"
+        },
+        "booking-status": {
+          "type": "string",
+          "description": "WIP synchronization status. (PROCESSED, PENDING)"
+        },
+        "reference-type": {
+          "type": "string",
+          "example": "CARD_ISSUING_FEE",
+          "description": "The type of this transaction."
+        }
+      },
+      "title": "TransactionsLiteListItem"
+    },
+    "EmailAddressChangeResponse": {
+      "type": "object",
+      "title": "EmailAddressChangeResponse",
+      "xml": {
+        "name": "EmailAddressChangeResponse",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "CreditCardRestInformation": {
+      "type": "object",
+      "properties": {
+        "credit-card-id": {
+          "type": "string",
+          "xml": {
+            "name": "identifier",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "number": {
+          "type": "string",
+          "xml": {
+            "name": "number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "cvc-code": {
+          "type": "string",
+          "xml": {
+            "name": "cvc-code",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "date-added": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "date-added",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "type": {
+          "type": "string",
+          "xml": {
+            "name": "type",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "MASTERCARD",
+            "VISA",
+            "MAESTRO",
+            "AMERICANEXPRESS",
+            "JCB"
+          ]
+        },
+        "expiration-date": {
+          "type": "string",
+          "xml": {
+            "name": "expiration-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "status": {
+          "type": "string",
+          "xml": {
+            "name": "status",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "CreditCardRestInformation"
+    },
+    "TopupRequest": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "xml": {
+            "name": "amount",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "ip-address": {
+          "type": "string"
+        },
+        "bank-transfer": {
+          "xml": {
+            "name": "bank-transfer",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/BankTransferInformation"
+        },
+        "display-name": {
+          "type": "string",
+          "xml": {
+            "name": "display-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "credit-card": {
+          "xml": {
+            "name": "credit-card",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/CreditCardRestInformation"
+        },
+        "server-url-prefix": {
+          "type": "string"
+        },
+        "brand-name": {
+          "type": "string"
+        },
+        "topup-method": {
+          "type": "string",
+          "xml": {
+            "name": "method",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "CREDITCARD",
+            "SOFORTTRANSFER",
+            "IDEALTRANSFER"
+          ]
+        }
+      },
+      "title": "TopupRequest"
+    },
+    "ReceiverIdentifier": {
+      "type": "object",
+      "properties": {
+        "mobile-number": {
+          "type": "string",
+          "xml": {
+            "name": "mobile-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "loading-number": {
+          "type": "string",
+          "xml": {
+            "name": "loading-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "email": {
+          "type": "string",
+          "xml": {
+            "name": "email",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "ReceiverIdentifier"
+    },
+    "UpdateUserAddressResponse": {
+      "type": "object",
+      "title": "UpdateUserAddressResponse"
+    },
+    "RegisterBankAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ip-address": {
+          "type": "string"
+        },
+        "display-name": {
+          "type": "string",
+          "xml": {
+            "name": "display-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "routing-number": {
+          "type": "string",
+          "xml": {
+            "name": "routing-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-account-type": {
+          "type": "string",
+          "xml": {
+            "name": "bank-account-type",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "iban": {
+          "type": "string",
+          "xml": {
+            "name": "iban",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-name": {
+          "type": "string",
+          "xml": {
+            "name": "bank-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-number": {
+          "type": "string",
+          "xml": {
+            "name": "account-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "terms-accepted": {
+          "type": "boolean",
+          "xml": {
+            "name": "terms-accepted",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bic": {
+          "type": "string",
+          "xml": {
+            "name": "bic",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "RegisterBankAccountRequest",
+      "xml": {
+        "name": "bank-account-registration-request",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "CardDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "cvc": {
+          "type": "string",
+          "xml": {
+            "name": "cvc",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "number": {
+          "type": "string",
+          "xml": {
+            "name": "number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "holder-name": {
+          "type": "string",
+          "xml": {
+            "name": "holder-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "expriation-date": {
+          "type": "string",
+          "xml": {
+            "name": "expiration-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "status": {
+          "type": "string",
+          "xml": {
+            "name": "status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "INACTIVE",
+            "ACTIVE",
+            "LOCKED",
+            "CLOSED"
+          ]
+        }
+      },
+      "title": "CardDetailsResponse"
+    },
+    "GiftCardUpgradeType": {
+      "type": "object",
+      "properties": {
+        "card-last-four-digits": {
+          "type": "string",
+          "xml": {
+            "name": "card-last-four-digits",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "loading-number": {
+          "type": "string",
+          "xml": {
+            "name": "loading-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "GiftCardUpgradeType"
+    },
+    "CustomRegistrationField": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "xml": {
+            "name": "name",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "value": {
+          "type": "string",
+          "xml": {
+            "name": "value",
+            "attribute": true,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "CustomRegistrationField"
+    },
+    "SendMoneyP2PResponse": {
+      "type": "object",
+      "title": "SendMoneyP2PResponse"
+    },
+    "CustomFieldsGroup": {
+      "type": "object",
+      "properties": {
+        "scope": {
+          "type": "string",
+          "xml": {
+            "name": "scope",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "fields": {
+          "type": "array",
+          "xml": {
+            "name": "custom-field",
+            "attribute": false,
+            "wrapped": false
+          },
+          "items": {
+            "$ref": "#/definitions/CustomRegistrationField"
+          }
+        }
+      },
+      "title": "CustomFieldsGroup"
+    },
+    "RegisterUserFeedbackMessage": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "xml": {
+            "name": "code",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "message": {
+          "type": "string",
+          "xml": {
+            "name": "message",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "RegisterUserFeedbackMessage"
+    },
+    "UpdateUserAddressRequest": {
+      "type": "object",
+      "properties": {
+        "zipcode": {
+          "type": "string",
+          "xml": {
+            "name": "zipcode",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "country": {
+          "type": "string",
+          "xml": {
+            "name": "country",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "line-two": {
+          "type": "string",
+          "xml": {
+            "name": "line-two",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "city": {
+          "type": "string",
+          "xml": {
+            "name": "city",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "street": {
+          "type": "string",
+          "xml": {
+            "name": "street",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "house-details": {
+          "type": "string",
+          "xml": {
+            "name": "house-details",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "region": {
+          "type": "string",
+          "xml": {
+            "name": "region",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "house-number": {
+          "type": "string",
+          "xml": {
+            "name": "house-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "UpdateUserAddressRequest"
+    },
+    "UserAddress": {
+      "type": "object",
+      "properties": {
+        "line-two": {
+          "type": "string",
+          "xml": {
+            "name": "line-two",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "city": {
+          "type": "string",
+          "xml": {
+            "name": "city",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "street": {
+          "type": "string",
+          "xml": {
+            "name": "street",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "region-or-state": {
+          "type": "string",
+          "xml": {
+            "name": "region",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "house-details": {
+          "type": "string",
+          "xml": {
+            "name": "house-details",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "zip-or-post-code": {
+          "type": "string",
+          "xml": {
+            "name": "zipcode",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "country-id": {
+          "type": "string",
+          "xml": {
+            "name": "country",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "house-number": {
+          "type": "string",
+          "xml": {
+            "name": "house-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "UserAddress"
+    },
+    "BankAccountDetail": {
+      "type": "object",
+      "properties": {
+        "bank-account-number-type": {
+          "type": "string",
+          "xml": {
+            "name": "bank-account-number-type",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "display-name": {
+          "type": "string",
+          "xml": {
+            "name": "display-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "routing-number": {
+          "type": "string",
+          "xml": {
+            "name": "routing-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-account-type": {
+          "type": "string",
+          "xml": {
+            "name": "bank-account-type",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "iban": {
+          "type": "string",
+          "xml": {
+            "name": "iban",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-account-id": {
+          "type": "string",
+          "xml": {
+            "name": "identifier",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-name": {
+          "type": "string",
+          "xml": {
+            "name": "bank-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-number": {
+          "type": "string",
+          "xml": {
+            "name": "account-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bic": {
+          "type": "string",
+          "xml": {
+            "name": "bic",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "status": {
+          "type": "string",
+          "xml": {
+            "name": "status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "NOT_VALIDATED",
+            "PENDING",
+            "VALIDATED",
+            "LOCKED",
+            "CLOSED",
+            "PRE_1_4"
+          ]
+        }
+      },
+      "title": "BankAccountDetail"
+    },
+    "RestSecurityQuestion": {
+      "type": "object",
+      "properties": {
+        "security-question": {
+          "type": "string",
+          "xml": {
+            "name": "question",
+            "attribute": true,
+            "wrapped": false
+          },
+          "enum": [
+            "MOTHER_PLACE_OF_BIRTH",
+            "BEST_CHILDHOOD_FRIEND_NAME",
+            "FIRST_PET_NAME",
+            "FAVOURITE_TEACHER_NAME",
+            "GRANDFATHER_PROFESSION",
+            "FAVOURITE_HISTORIC_CHARACTER"
+          ]
+        }
+      },
+      "title": "RestSecurityQuestion"
+    },
+    "CreditCardInformation": {
+      "type": "object",
+      "properties": {
+        "credit-card-id": {
+          "type": "string",
+          "xml": {
+            "name": "identifier",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "number": {
+          "type": "string",
+          "xml": {
+            "name": "number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "display-name": {
+          "type": "string",
+          "xml": {
+            "name": "display-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "cvc-code": {
+          "type": "string",
+          "xml": {
+            "name": "cvc-code",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "date-added": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "date-added",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "type": {
+          "type": "string",
+          "xml": {
+            "name": "type",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "MASTERCARD",
+            "VISA",
+            "MAESTRO",
+            "AMERICANEXPRESS",
+            "JCB"
+          ]
+        },
+        "expiration-date": {
+          "type": "string",
+          "xml": {
+            "name": "expiration-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "status": {
+          "type": "string",
+          "xml": {
+            "name": "status",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "CreditCardInformation"
+    },
+    "EmailAddressChangeRequest": {
+      "type": "object",
+      "properties": {
+        "new-email": {
+          "type": "string",
+          "xml": {
+            "name": "new-email",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "EmailAddressChangeRequest",
+      "xml": {
+        "name": "email-address-change-request",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "MoneyType": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "example": "EUR",
+          "xml": {
+            "name": "currency",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "value": {
+          "type": "number",
+          "example": 140.0
+        }
+      },
+      "title": "MoneyType"
+    },
+    "BankAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "bank-accounts": {
+          "type": "array",
+          "xml": {
+            "name": "bank-accounts",
+            "attribute": false,
+            "wrapped": true
+          },
+          "items": {
+            "$ref": "#/definitions/BankAccountDetail"
+          }
+        }
+      },
+      "title": "BankAccountsResponse"
+    },
+    "RegisterCreditCardRequest": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string",
+          "xml": {
+            "name": "number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "ip-address": {
+          "type": "string"
+        },
+        "expiry-date": {
+          "type": "string",
+          "xml": {
+            "name": "expiry-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "display-name": {
+          "type": "string",
+          "xml": {
+            "name": "display-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "type": {
+          "type": "string",
+          "xml": {
+            "name": "type",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "MASTERCARD",
+            "VISA",
+            "MAESTRO",
+            "AMERICANEXPRESS",
+            "JCB"
+          ]
+        }
+      },
+      "title": "RegisterCreditCardRequest",
+      "xml": {
+        "name": "credit-card",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "UserProfileResponse": {
+      "type": "object",
+      "properties": {
+        "mobile-number-status": {
+          "type": "string",
+          "xml": {
+            "name": "mobile-number-status",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "landline-number": {
+          "type": "string",
+          "xml": {
+            "name": "landline-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "address": {
+          "xml": {
+            "name": "address",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/UserAddress"
+        },
+        "brand-membership-id": {
+          "type": "string",
+          "xml": {
+            "name": "brand-membership-id",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "citizenship": {
+          "type": "string",
+          "xml": {
+            "name": "citizenship",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "date-of-creation": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "date-of-creation",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "language": {
+          "type": "string",
+          "xml": {
+            "name": "language",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "locale": {
+          "type": "string",
+          "xml": {
+            "name": "locale",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "title": {
+          "type": "string",
+          "xml": {
+            "name": "title",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "first-name": {
+          "type": "string",
+          "xml": {
+            "name": "first-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "birth-city": {
+          "type": "string",
+          "xml": {
+            "name": "city-of-birth",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "maiden-name": {
+          "type": "string",
+          "xml": {
+            "name": "maiden-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "birth-date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "birth-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "mobile-number": {
+          "type": "string",
+          "xml": {
+            "name": "mobile-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "referrer-merchant-id": {
+          "type": "string",
+          "xml": {
+            "name": "referrer-merchant-id",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "security-question": {
+          "xml": {
+            "name": "security-question",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/RestSecurityQuestion"
+        },
+        "marketing-opt-ins": {
+          "type": "object",
+          "xml": {
+            "name": "marketing-opt-ins",
+            "attribute": false,
+            "wrapped": false
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "EMAIL",
+                "PHONE",
+                "POST",
+                "PUSH_NOTIFICATION"
+              ]
+            }
+          }
+        },
+        "middle-name": {
+          "type": "string",
+          "xml": {
+            "name": "middle-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "salutation": {
+          "type": "string",
+          "xml": {
+            "name": "salutation",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "MR",
+            "MS",
+            "MRS",
+            "UNKNOWN"
+          ]
+        },
+        "job": {
+          "type": "string",
+          "xml": {
+            "name": "job",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "pending-mobile-numbers": {
+          "type": "array",
+          "xml": {
+            "name": "pending-mobile-numbers",
+            "attribute": false,
+            "wrapped": true
+          },
+          "items": {
+            "$ref": "#/definitions/UserProfilePendingPhone"
+          }
+        },
+        "login-name": {
+          "type": "string",
+          "xml": {
+            "name": "login-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "email": {
+          "type": "string",
+          "xml": {
+            "name": "email",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "last-name": {
+          "type": "string",
+          "xml": {
+            "name": "last-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "UserProfileResponse"
+    },
+    "AccountMessage": {
+      "type": "object",
+      "properties": {
+        "physical-iban": {
+          "type": "string",
+          "xml": {
+            "name": "physical-iban",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "balance": {
+          "xml": {
+            "name": "balance",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/BalanceMessage"
+        },
+        "routing-number": {
+          "type": "string",
+          "xml": {
+            "name": "routing-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "iban": {
+          "type": "string",
+          "xml": {
+            "name": "iban",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-number": {
+          "type": "string",
+          "xml": {
+            "name": "account-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "loading-number": {
+          "type": "string",
+          "xml": {
+            "name": "loading-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "AccountMessage"
+    },
+    "CardSummary": {
+      "type": "object",
+      "properties": {
+        "lock-reason": {
+          "type": "string",
+          "xml": {
+            "name": "lock-reason",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "CARD_DELIVERING",
+            "CARD_DEFECT",
+            "CARD_LOST",
+            "CARD_STOLEN",
+            "CARD_COUNTERFEITED",
+            "CARD_FRAUDULENTLY_USED",
+            "CARD_NOT_RECEIVED",
+            "CARD_LOCKED_BY_BANK",
+            "CARD_LOCKED_BY_USER",
+            "OTHER"
+          ]
+        },
+        "card-ref-id": {
+          "type": "string",
+          "xml": {
+            "name": "card-ref-id",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "pin-updatable": {
+          "type": "boolean",
+          "xml": {
+            "name": "pin-updatable",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "program-name": {
+          "type": "string",
+          "xml": {
+            "name": "program-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "display-name": {
+          "type": "string",
+          "xml": {
+            "name": "display-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "combo-card-identifier": {
+          "type": "string",
+          "xml": {
+            "name": "combocard-identifier",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "card-identifier": {
+          "type": "string",
+          "xml": {
+            "name": "identifier",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "status": {
+          "type": "string",
+          "xml": {
+            "name": "status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "INACTIVE",
+            "ACTIVE",
+            "LOCKED",
+            "CLOSED"
+          ]
+        }
+      },
+      "title": "CardSummary"
+    },
+    "UpdateUserProfilePersonalDataRequest": {
+      "type": "object",
+      "properties": {
+        "maiden-name": {
+          "type": "string",
+          "xml": {
+            "name": "maiden-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "nationality": {
+          "type": "string",
+          "xml": {
+            "name": "nationality",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "birth-date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "birth-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "brand-name": {
+          "type": "string"
+        },
+        "middle-name": {
+          "type": "string",
+          "xml": {
+            "name": "middle-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "salutation": {
+          "type": "string",
+          "xml": {
+            "name": "salutation",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "locale": {
+          "type": "string",
+          "xml": {
+            "name": "locale",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "first-name": {
+          "type": "string",
+          "xml": {
+            "name": "first-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "city-of-birth": {
+          "type": "string",
+          "xml": {
+            "name": "city-of-birth",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "login-name": {
+          "type": "string",
+          "xml": {
+            "name": "login-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "last-name": {
+          "type": "string",
+          "xml": {
+            "name": "last-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "UpdateUserProfilePersonalDataRequest"
+    },
+    "TopupResponse": {
+      "type": "object",
+      "properties": {
+        "acs-url": {
+          "type": "string",
+          "xml": {
+            "name": "acs-url",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-redirect-url": {
+          "type": "string",
+          "xml": {
+            "name": "redirect-url",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "params": {
+          "type": "object",
+          "xml": {
+            "name": "post-params",
+            "attribute": false,
+            "wrapped": false
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "TopupResponse"
+    },
+    "SEPAReceiver": {
+      "type": "object",
+      "required": [
+        "iban",
+        "last-name"
+      ],
+      "properties": {
+        "iban": {
+          "type": "string",
+          "example": "DE40715927019372376313",
+          "xml": {
+            "name": "iban",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bic": {
+          "type": "string",
+          "example": "BUZXLG91",
+          "xml": {
+            "name": "bic",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "first-name": {
+          "type": "string",
+          "example": "John",
+          "xml": {
+            "name": "first-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "last-name": {
+          "type": "string",
+          "example": "Dice",
+          "xml": {
+            "name": "last-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "SEPAReceiver"
+    },
+    "UserResponse": {
+      "type": "object",
+      "properties": {
+        "business-status": {
+          "type": "string",
+          "xml": {
+            "name": "business-status",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "global-user-name": {
+          "type": "string",
+          "xml": {
+            "name": "global-user-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "terms-of-use-accepted": {
+          "type": "boolean",
+          "xml": {
+            "name": "terms-of-use-accepted",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "trust-class": {
+          "xml": {
+            "name": "trust-class",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/TrustClassType"
+        },
+        "person-verification-status": {
+          "type": "string",
+          "xml": {
+            "name": "person-verification-status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "NOT_VERIFIED",
+            "PENDING",
+            "VERIFIED",
+            "REJECTED",
+            "REFUSED",
+            "TIMED_OUT"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "xml": {
+            "name": "title",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "first-name": {
+          "type": "string",
+          "xml": {
+            "name": "firstname",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "application-pin": {
+          "xml": {
+            "name": "application-pin",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/ApplicationPinType"
+        },
+        "kyc-level": {
+          "type": "string",
+          "xml": {
+            "name": "kyc-level",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "ANONYMOUS",
+            "REGISTERED",
+            "LEGITIMATED"
+          ]
+        },
+        "person-verification-submitted-at": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "person-verification-submitted-at",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "address-verification-status": {
+          "type": "string",
+          "xml": {
+            "name": "address-verification-status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "NOT_VERIFIED",
+            "PENDING",
+            "VERIFIED",
+            "REJECTED",
+            "REFUSED",
+            "TIMED_OUT"
+          ]
+        },
+        "referrer-merchant-id": {
+          "type": "string",
+          "xml": {
+            "name": "referrer-merchant-id",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "passthrough": {
+          "xml": {
+            "name": "passthrough",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/PassThroughMessage"
+        },
+        "creation-date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "creation-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "middle-name": {
+          "type": "string",
+          "xml": {
+            "name": "middle-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "parental-status": {
+          "type": "string",
+          "xml": {
+            "name": "parental-status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "PARENT",
+            "CHILD_PARENT",
+            "CHILD"
+          ]
+        },
+        "brand": {
+          "type": "string",
+          "xml": {
+            "name": "brand",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account": {
+          "xml": {
+            "name": "account",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/AccountMessage"
+        },
+        "last-name": {
+          "type": "string",
+          "xml": {
+            "name": "lastname",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "username": {
+          "type": "string",
+          "xml": {
+            "name": "username",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "UserResponse"
+    },
+    "MobileInfoResponse": {
+      "type": "object",
+      "title": "MobileInfoResponse"
+    },
+    "RegisterBankAccountResponse": {
+      "type": "object",
+      "title": "RegisterBankAccountResponse",
+      "xml": {
+        "name": "RegisterBankAccountResponse",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "PassThroughMessage": {
+      "type": "object",
+      "properties": {
+        "bank-account": {
+          "$ref": "#/definitions/BankAccountDetail"
+        },
+        "enabled": {
+          "type": "boolean",
+          "xml": {
+            "name": "enabled",
+            "attribute": true,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "PassThroughMessage"
+    },
+    "ApplicationPinType": {
+      "type": "object",
+      "properties": {
+        "initialized": {
+          "type": "boolean",
+          "xml": {
+            "name": "initialized",
+            "attribute": true,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "ApplicationPinType"
+    },
+    "SendMoneyBankAccountRequest": {
+      "type": "object",
+      "required": [
+        "amount",
+        "receiver"
+      ],
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/MoneyType"
+        },
+        "receiver": {
+          "$ref": "#/definitions/SEPAReceiver"
+        },
+        "reason-for-transfer": {
+          "type": "string",
+          "example": "Bounty"
+        }
+      },
+      "title": "SendMoneyBankAccountRequest",
+      "xml": {
+        "name": "SendMoneyBankAccountRequest",
+        "attribute": false,
+        "wrapped": false
+      },
+      "description": "Request for XS2A SEPA transfer."
+    },
+    "BankAccountType": {
+      "type": "object",
+      "properties": {
+        "iban": {
+          "type": "string",
+          "xml": {
+            "name": "iban",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-number": {
+          "type": "string",
+          "xml": {
+            "name": "bank-account-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-holder": {
+          "type": "string",
+          "xml": {
+            "name": "account-holder",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bic": {
+          "type": "string",
+          "xml": {
+            "name": "bic",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-code": {
+          "type": "string",
+          "xml": {
+            "name": "bank-code",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "BankAccountType"
+    },
+    "TransactionsLiteListResponse": {
+      "type": "object",
+      "required": [
+        "pagination",
+        "transactions"
+      ],
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "transactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TransactionsLiteListItem"
+          }
+        }
+      },
+      "title": "TransactionsLiteListResponse",
+      "xml": {
+        "name": "TransactionsLiteListResponse",
+        "attribute": false,
+        "wrapped": false
+      },
+      "description": "Response for XS2A transactions list"
+    },
+    "TrustClassType": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "xml": {
+            "name": "name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "description": {
+          "type": "string",
+          "xml": {
+            "name": "description",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "TrustClassType"
+    },
+    "CreditCardsResponse": {
+      "type": "object",
+      "properties": {
+        "credit-cards": {
+          "type": "array",
+          "xml": {
+            "name": "credit-cards",
+            "attribute": false,
+            "wrapped": true
+          },
+          "items": {
+            "$ref": "#/definitions/CreditCardInformation"
+          }
+        }
+      },
+      "title": "CreditCardsResponse"
+    },
+    "MobileInfoRequestV2": {
+      "type": "object",
+      "properties": {
+        "operating-system-type": {
+          "type": "string",
+          "xml": {
+            "name": "operating-system",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "ANDROID",
+            "IOS",
+            "WINDOWS",
+            "BLACKBERRY",
+            "LINUX"
+          ]
+        },
+        "push-token": {
+          "type": "string",
+          "xml": {
+            "name": "push-token",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "MobileInfoRequestV2",
+      "xml": {
+        "name": "mobile-info-request",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "RegisterUserRequest": {
+      "type": "object",
+      "properties": {
+        "partner-identification-id": {
+          "type": "string",
+          "xml": {
+            "name": "partner-identification-id",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "landline-number": {
+          "type": "string",
+          "xml": {
+            "name": "landline-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "regulatory-ids": {
+          "type": "array",
+          "xml": {
+            "name": "regulatory-ids",
+            "attribute": false,
+            "wrapped": true
+          },
+          "items": {
+            "$ref": "#/definitions/RegulatoryId"
+          }
+        },
+        "terms-of-use-accepted": {
+          "type": "boolean",
+          "xml": {
+            "name": "terms-of-use-accepted",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-number": {
+          "type": "string",
+          "xml": {
+            "name": "account-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "device-id": {
+          "type": "string",
+          "xml": {
+            "name": "deviceId",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "rns-mpa-id": {
+          "type": "string",
+          "xml": {
+            "name": "rns-mpa-id",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "password": {
+          "type": "string",
+          "xml": {
+            "name": "password",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "country-of-residence": {
+          "type": "string",
+          "xml": {
+            "name": "country-of-residence",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "birth-date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "birth-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "tpin": {
+          "type": "string",
+          "xml": {
+            "name": "t-pin",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "middle-name": {
+          "type": "string",
+          "xml": {
+            "name": "middle-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "marital-status": {
+          "type": "string",
+          "xml": {
+            "name": "marital-status",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "card-expiry-date": {
+          "xml": {
+            "name": "card-expiry-date",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/YearMonth"
+        },
+        "referrer-merchant-i-d": {
+          "type": "string",
+          "xml": {
+            "name": "referrer-merchant-ID",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bank-account": {
+          "xml": {
+            "name": "bank-account",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/BankAccountType"
+        },
+        "card-program-name": {
+          "type": "string",
+          "xml": {
+            "name": "card-program-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "house-details": {
+          "type": "string",
+          "xml": {
+            "name": "house-details",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "card-pin": {
+          "type": "string",
+          "xml": {
+            "name": "card-pin",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "first-name": {
+          "type": "string",
+          "xml": {
+            "name": "first-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "zipcode": {
+          "type": "string",
+          "xml": {
+            "name": "zipcode",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "nationality": {
+          "type": "string",
+          "xml": {
+            "name": "nationality",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "verification-code": {
+          "type": "string",
+          "xml": {
+            "name": "verification-code",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "brand-name": {
+          "type": "string"
+        },
+        "address-line-two": {
+          "type": "string",
+          "xml": {
+            "name": "address-line-two",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "marketing-opt-ins": {
+          "type": "object",
+          "xml": {
+            "name": "marketing-opt-ins",
+            "attribute": false,
+            "wrapped": false
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "EMAIL",
+                "PHONE",
+                "POST",
+                "PUSH_NOTIFICATION"
+              ]
+            }
+          }
+        },
+        "salutation": {
+          "type": "string",
+          "xml": {
+            "name": "salutation",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "MR",
+            "MS",
+            "MRS",
+            "UNKNOWN"
+          ]
+        },
+        "job": {
+          "type": "string",
+          "xml": {
+            "name": "job",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "region": {
+          "type": "string",
+          "xml": {
+            "name": "region",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "registration-mode": {
+          "type": "string",
+          "enum": [
+            "PARENT",
+            "CHILD"
+          ]
+        },
+        "brand-membership-id": {
+          "type": "string",
+          "xml": {
+            "name": "brand-membershipId",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "city": {
+          "type": "string",
+          "xml": {
+            "name": "city",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "locale": {
+          "type": "string",
+          "xml": {
+            "name": "locale",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "BG",
+            "CS",
+            "DA",
+            "DE",
+            "EN",
+            "ES",
+            "FR",
+            "HR",
+            "HU",
+            "IS",
+            "IT",
+            "LT",
+            "NL",
+            "NO",
+            "PL",
+            "RM",
+            "RU",
+            "SK",
+            "SV",
+            "TR",
+            "AR"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "xml": {
+            "name": "title",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "city-of-birth": {
+          "type": "string",
+          "xml": {
+            "name": "city-of-birth",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "maiden-name": {
+          "type": "string",
+          "xml": {
+            "name": "maiden-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "street": {
+          "type": "string",
+          "xml": {
+            "name": "street",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "mobile-number": {
+          "type": "string",
+          "xml": {
+            "name": "mobile-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "person-identity-document": {
+          "xml": {
+            "name": "person-identification",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/PersonIdentityDocument"
+        },
+        "house-number": {
+          "type": "string",
+          "xml": {
+            "name": "house-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "email": {
+          "type": "string",
+          "xml": {
+            "name": "email",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "last-name": {
+          "type": "string",
+          "xml": {
+            "name": "last-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "global-user-name": {
+          "type": "string",
+          "xml": {
+            "name": "global-user-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "gift-card-upgrade": {
+          "xml": {
+            "name": "gift-card-upgrade",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/GiftCardUpgradeType"
+        },
+        "ip-address": {
+          "type": "string",
+          "xml": {
+            "name": "ipAddressV4",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "cplcid": {
+          "type": "string",
+          "xml": {
+            "name": "cplcid",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-currency": {
+          "type": "string",
+          "xml": {
+            "name": "account-currency",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "security-question": {
+          "type": "string",
+          "xml": {
+            "name": "security-question",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "MOTHER_PLACE_OF_BIRTH",
+            "BEST_CHILDHOOD_FRIEND_NAME",
+            "FIRST_PET_NAME",
+            "FAVOURITE_TEACHER_NAME",
+            "GRANDFATHER_PROFESSION",
+            "FAVOURITE_HISTORIC_CHARACTER"
+          ]
+        },
+        "security-answer": {
+          "type": "string",
+          "xml": {
+            "name": "security-answer",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "custom-fields": {
+          "type": "array",
+          "xml": {
+            "name": "custom-fields",
+            "attribute": false,
+            "wrapped": false
+          },
+          "items": {
+            "$ref": "#/definitions/CustomFieldsGroup"
+          }
+        },
+        "login-name": {
+          "type": "string",
+          "xml": {
+            "name": "login-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "RegisterUserRequest"
+    },
+    "UpdateUserProfilePersonalDataResponse": {
+      "type": "object",
+      "title": "UpdateUserProfilePersonalDataResponse"
+    },
+    "SendMoneyP2PRequest": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "xml": {
+            "name": "amount",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "send-money-p2-p-ref-id": {
+          "type": "string"
+        },
+        "usage": {
+          "type": "string",
+          "xml": {
+            "name": "usage",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "receiver-identifier": {
+          "xml": {
+            "name": "receiver-identifier",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/ReceiverIdentifier"
+        }
+      },
+      "title": "SendMoneyP2PRequest"
+    },
+    "RegisterUserResponse": {
+      "type": "object",
+      "properties": {
+        "business-status": {
+          "type": "string",
+          "xml": {
+            "name": "business-status",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "feedback-messages": {
+          "type": "array",
+          "xml": {
+            "name": "feedback-messages",
+            "attribute": false,
+            "wrapped": true
+          },
+          "items": {
+            "$ref": "#/definitions/RegisterUserFeedbackMessage"
+          }
+        },
+        "login-identifier": {
+          "type": "string",
+          "xml": {
+            "name": "login-identifier",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "loading-number": {
+          "type": "string",
+          "xml": {
+            "name": "loading-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "login-name": {
+          "type": "string",
+          "xml": {
+            "name": "login-name",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "status": {
+          "type": "string",
+          "xml": {
+            "name": "status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "ACTIVE",
+            "LOCKED",
+            "CLOSED",
+            "IN_REGISTRATION"
+          ]
+        }
+      },
+      "title": "RegisterUserResponse"
+    },
+    "RegisterCreditCardResponse": {
+      "type": "object",
+      "title": "RegisterCreditCardResponse",
+      "xml": {
+        "name": "RegisterCreditCardResponse",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "BankTransferInformation": {
+      "type": "object",
+      "properties": {
+        "success-url": {
+          "type": "string",
+          "xml": {
+            "name": "success-url",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "identifier": {
+          "type": "string",
+          "xml": {
+            "name": "identifier",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "routing-number": {
+          "type": "string",
+          "xml": {
+            "name": "routing-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "iban": {
+          "type": "string",
+          "xml": {
+            "name": "iban",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "account-number": {
+          "type": "string",
+          "xml": {
+            "name": "account-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "cancel-url": {
+          "type": "string",
+          "xml": {
+            "name": "cancel-url",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "bic": {
+          "type": "string",
+          "xml": {
+            "name": "bic",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "BankTransferInformation"
+    },
+    "RegulatoryId": {
+      "type": "object",
+      "properties": {
+        "verified": {
+          "type": "boolean",
+          "xml": {
+            "name": "verified",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "country-id": {
+          "type": "string",
+          "xml": {
+            "name": "country",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "validation-status": {
+          "type": "string",
+          "xml": {
+            "name": "validation-status",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "type": {
+          "type": "string",
+          "xml": {
+            "name": "type",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "title": "RegulatoryId"
+    },
+    "Pagination": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "xml": {
+            "name": "total",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "start": {
+          "type": "integer",
+          "format": "int32",
+          "xml": {
+            "name": "start",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "end": {
+          "type": "integer",
+          "format": "int32",
+          "xml": {
+            "name": "end",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "Pagination"
+    },
+    "UserProfilePendingPhone": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "mobile-number": {
+          "type": "string",
+          "xml": {
+            "name": "mobile-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "state": {
+          "type": "string",
+          "xml": {
+            "name": "status",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "NOT_VERIFIED",
+            "PENDING"
+          ]
+        }
+      },
+      "title": "UserProfilePendingPhone"
+    },
+    "PersonIdentityDocument": {
+      "type": "object",
+      "properties": {
+        "place-of-birth": {
+          "type": "string",
+          "xml": {
+            "name": "place-of-birth",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "issuing-country": {
+          "type": "string",
+          "xml": {
+            "name": "issuing-country",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "id-number": {
+          "type": "string",
+          "xml": {
+            "name": "id-number",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "birth-date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "birth-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "issuing-date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "issuing-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "issuing-authority": {
+          "type": "string",
+          "xml": {
+            "name": "issuing-authority",
+            "attribute": false,
+            "wrapped": false
+          }
+        },
+        "type": {
+          "type": "string",
+          "xml": {
+            "name": "type",
+            "attribute": false,
+            "wrapped": false
+          },
+          "enum": [
+            "IDENTITY_CARD",
+            "PASSPORT",
+            "CHILD_TRAVEL_DOCUMENT",
+            "BIRTH_CERTIFICATE",
+            "OTHER"
+          ]
+        },
+        "expiration-date": {
+          "type": "string",
+          "format": "date-time",
+          "xml": {
+            "name": "expiration-date",
+            "attribute": false,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "PersonIdentityDocument"
+    },
+    "BalanceMessage": {
+      "type": "object",
+      "properties": {
+        "available-amount": {
+          "xml": {
+            "name": "available-amount",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "total-debit-reservations-amount": {
+          "xml": {
+            "name": "total-debit-reservations-amount",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "total-credit-reservations-amount": {
+          "xml": {
+            "name": "total-credit-reservations-amount",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "reserved-amount": {
+          "xml": {
+            "name": "reserved-amount",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "current-overdraft-limit": {
+          "xml": {
+            "name": "current-overdraft-limit",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "monthly-overdraft-limit": {
+          "xml": {
+            "name": "monthly-overdraft-limit",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        },
+        "total-amount": {
+          "xml": {
+            "name": "total-amount",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/MoneyType"
+        }
+      },
+      "title": "BalanceMessage"
+    },
+    "SendMoneyBankAccountResponse": {
+      "type": "object",
+      "required": [
+        "amount",
+        "fee",
+        "total-amount"
+      ],
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/MoneyType"
+        },
+        "fee": {
+          "$ref": "#/definitions/MoneyType"
+        },
+        "total-amount": {
+          "$ref": "#/definitions/MoneyType"
+        }
+      },
+      "title": "SendMoneyBankAccountResponse",
+      "xml": {
+        "name": "SendMoneyBankAccountResponse",
+        "attribute": false,
+        "wrapped": false
+      },
+      "description": "Response for XS2A SEPA transfer."
+    },
+    "UpdateUserOrShippingAddressRequest": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "shipping-address": {
+          "xml": {
+            "name": "shipping-address",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/UpdateUserAddressRequest"
+        },
+        "user-address": {
+          "xml": {
+            "name": "user-address",
+            "attribute": false,
+            "wrapped": false
+          },
+          "$ref": "#/definitions/UpdateUserAddressRequest"
+        }
+      },
+      "title": "UpdateUserOrShippingAddressRequest",
+      "xml": {
+        "name": "update-address-request",
+        "attribute": false,
+        "wrapped": false
+      }
+    },
+    "YearMonth": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "YearMonth"
+    },
+    "CardListingResponse": {
+      "type": "object",
+      "properties": {
+        "card-summaries": {
+          "type": "array",
+          "xml": {
+            "name": "card-summary",
+            "attribute": false,
+            "wrapped": false
+          },
+          "items": {
+            "$ref": "#/definitions/CardSummary"
+          }
+        }
+      },
+      "title": "CardListingResponse"
+    }
+  }
+}

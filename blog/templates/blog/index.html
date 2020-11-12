@@ -1,0 +1,54 @@
+{% load static %}
+
+<div class="container p-5">
+	<div class="row">
+		<div class="col-sm-12 mb-3">
+			<h1>jQuery Category Filter Demo</h1>
+		</div>
+		<div class="col-sm-12">
+			<div class="category-filter pb-5">
+    			<button class="btn btn-outline-primary category-button active mr-3" data-filter="all">All</button>
+    			<button class="btn btn-outline-primary category-button mr-3" data-filter="portraits">Portraits</button>
+    			<button class="btn btn-outline-primary category-button mr-3" data-filter="landscapes">Landscapes</button>
+    			<button class="btn btn-outline-primary category-button mr-3" data-filter="urban">Urban</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6 col-md-4 col-lg-3 filter portraits mb-5">
+		  <img src="https://placeimg.com/645/480/people" class="img-fluid">
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3 filter portraits mb-5">
+		  <img src="https://placeimg.com/635/480/people" class="img-fluid">
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3 filter landscapes mb-5">
+		  <img src="https://placeimg.com/640/480/nature" class="img-fluid">
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3 filter landscapes mb-5">
+		  <img src="https://placeimg.com/645/480/nature" class="img-fluid">
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3 filter urban mb-5">
+		  <img src="https://placeimg.com/640/480/arch" class="img-fluid">
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3 filter landscapes mb-5">
+		  <img src="https://placeimg.com/635/480/nature" class="img-fluid">
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3 filter portraits mb-5">
+		  <img src="https://placeimg.com/640/480/people" class="img-fluid">
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3 filter landscapes mb-5">
+		  <img src="https://placeimg.com/660/480/nature" class="img-fluid">
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" 
+		integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" 
+		crossorigin="anonymous">
+</script>
+<script src={% static 'blog/js/main.js' %}></script>
+<script type="text/javascript"> $('.category-filter .category-button').categoryFilter(); </script>
+
+
+</html>

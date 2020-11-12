@@ -1,0 +1,243 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+ <head>
+
+    <title>Drak whisper</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link href={% static 'blog/css/main.css' %} rel="stylesheet" type="text/css">
+    <link href={% static 'blog/font_awesome_css/all.css' %} rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  </head>
+
+<body>
+
+  <header class="">
+    <style>
+  .navbar {
+  height: 50px;
+  }
+</style>
+
+<!--fixed-top--> 
+<nav class="navbar navbar-expand-lg  mb-1 container">
+
+  <a class="navbar-brand text-success font-weight-bold" href="#">
+    <!-- <img src={% static 'blog/images/brand.png' %} class="mr-2" height="50px" width="auto" alt=""> -->
+    DarkWhisper
+  </a>
+
+  <button type="" aria-controls="navbarcollapse" class="navbar-toggler my-2" data-toggle="collapse"
+    data-target="#navbarcollapse" aria-expanded="false">
+    <!-- <span class="navbar-toggler-icon"> -->
+    <i class="fas fa-bars"></i>
+    </span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarcollapse">
+
+    <ul class="navbar-nav mr-auto ml-3">
+
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Premium Template</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#"> About</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contract Us</a>
+      </li>
+    </ul> 
+
+      <ul class="navbar-nav ml-auto mt-2 mr-5">
+
+        {% if user.is_authenticated %}
+
+        <li class="nav-item">
+          <a class="nav-link text-success" href="{% url 'users-profile' %}">&nbsp; 
+           &nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i> Profile</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-success" href="{% url 'users-logout' %}">&nbsp; 
+            &nbsp; <i class="fas fa-sign-in-alt"></i> Logout</a>
+        </li>
+
+        <li class="form-group nav-item">
+          <input type="text" class="input form-control form-control-sm mt-2 mr-2 ml-2 btn btn-outline-light"
+            name="search" id="" aria-describedby="helpId" placeholder="Search....">
+        </li>
+
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link text-success" href="{% url 'users-login' %}">&nbsp;<i
+              class="fas fa-sign-in-alt"></i>&nbsp; Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-success" href="{% url 'users-register' %}">&nbsp;<i
+              class="fas fa-user-plus"></i>&nbsp; Sign up</a>
+        </li>
+
+        <li class="form-group nav-item">
+          <input type="text" class="input form-control form-control-sm mt-2 mr-2 ml-2 btn btn-outline-success"
+            name="search" id="" aria-describedby="helpId" placeholder="Search....">
+        </li>
+
+        {% endif %}
+      </ul>
+
+    </ul>
+
+      <style>
+        input[name=search] {
+          width: 100px;
+          height: 30px;
+          -webkit-transition: width 0.4s ease-in-out;
+          transition: width 0.4s ease-in-out;
+        }
+        /* When the input field gets focus, change its width to 100% */
+        input[name=search]:focus {
+          width: 100%;
+        }
+      </style>
+
+  </div>
+</nav>
+
+<nav class="sidenav"></nav>
+</header>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    </ol>
+        <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="1" class="active"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src={% static 'blog/images/44.png' %} class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="text-1">Probably The World Best Free Templates</a>
+          <p class="text-2">The Best Free Stock Photos & Templates Shared By Talented Creators</p>
+          <a class="btn btn-outline-success font-weight-bold mt-2" href="{% url 'pro_theme:product_list'  %}">Go For Premium Templates</a>
+        </div>
+      </div>
+<!--       <div class="carousel-item">
+        <img src={% static 'blog/images/2.png' %} class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="text-1">Probably The World Best Free Templates</a>
+          <p class="text-2">The Best Free Stock Photos & Templates Shared By Talented Creators</p>
+           <a href="" class="btn btn-outline-success font-weight-bold mt-2">Go For Premium Templates</a>
+        </div> -->
+      </div>
+      <!-- <div class="carousel-item">
+        <img src={% static 'blog/images/44 – 2.png' %} class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="text-1">Probably The World Best Free Templates</a>
+          <p class="text-2">The Best Free Stock Photos & Templates Shared By Talented Creators</p>
+          <button type="submit" class="btn btn-outline-success font-weight-bold mt-2">Go For Premium Templates</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src={% static 'blog/images/44 – 3.png' %} class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="text-1">Probably The World Best Free Templates</a>
+          <p class="text-2">The Best Free Stock Photos & Templates Shared By Talented Creators</p>
+          <button type="submit" class="btn btn-outline-success font-weight-bold mt-2">Go For Premium Templates</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src={% static 'blog/images/44 – 4.png' %} class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="text-1">Probably The World Best Free Templates</a>
+          <p class="text-2">The Best Free Stock Photos & Templates Shared By Talented Creators</p>
+          <button type="submit" class="btn btn-outline-success font-weight-bold mt-2">Go For Premium Templates</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src={% static 'blog/images/44 – 6.png' %} class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="text-1">Probably The World Best Free Templates</a>
+          <p class="text-2">The Best Free Stock Photos & Templates Shared By Talented Creators</p>
+          <button type="submit" class="btn btn-outline-success font-weight-bold mt-2">Go For Premium Templates</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src={% static 'blog/images/44 – 7.png' %} class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="text-1">Probably The World Best Free Templates</a>
+          <p class="text-2">The Best Free Stock Photos & Templates Shared By Talented Creators</p>
+          <button type="submit" class="btn btn-outline-success font-weight-bold mt-2">Go For Premium Templates</button>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+ 
+  <style> .content-section{margin-top: 50px; text-align: center;} </style>
+  
+ <div class="container content-section">
+  <div class="row">
+    <div class="col-md-8">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+ </div>
+
+
+ {% include 'blog/free_theme.html' %}
+
+
+ 
+  <div class="text-light bg-secondary text-center pb-1">
+    <a>&nbsp;<i class="fab fa-github"></i>&nbsp; Copyright 2019-2020 DarkWhisper - All Rights Reserved. Privacy Policy</a>
+  </div>
+
+  <script src={% static 'blog/js/main.js' %}></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous">
+  </script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

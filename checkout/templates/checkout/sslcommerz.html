@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+<!-- https://sandbox.sslcommerz.com/EasyCheckOut/testcde8d2df8210ec363b62f7aa7b134d367ae -->
+<!-- <input type="hidden" name="return_url" value="https://pay.skrill.com/payment_made.html">  -->
+<!-- <input type="hidden" name="cancel_url" value="https://pay.skrill.com /payment_cancelled.html">   -->
+<!-- <input type="hidden" name="status_url" value="https://pay.skrill.com /process_payment.cgi">  -->
+<!-- action="https://sandbox.sslcommerz.com/gwprocess/v4/api.php" -->
+{{cart.cart_price}}
+<div class="row">
+  <form id="payment_gw" name="payment_gw" method="POST" action="https://sandbox.sslcommerz.com/EasyCheckOut/testcde649f15a0af477f36e449c86e5ac403c2" >
+    {% csrf_token %}
+  <input type='hidden' name='store_id' value='darkw5ec50255ccdb7'/>
+  <input type='hidden' name='tran_id' value='darkw5ec50255ccdb7'/>
+  <input type='hidden' name='store_passwd' value='darkw5ec50255ccdb7@ssl'/>
+  <input type="hidden" name="session_ID" value="A3DFA2234"> 
+  <input type='hidden' name='currency' value='BDT' />
+  <input type="hidden" name='total_amount' value='{{cart.cart_price}}' />
+  <input type="hidden" name="cus_email" value="mohammadfayaj36@gmail.com">  
+  <input type="hidden" name="language" value="EN">  
+  <input type="hidden" name="cus_name" value="mohammad">
+  <input type="hidden" name="cus_add1" value="mirpur-1">  
+  <input type="hidden" name="cus_city" value="dhaka">  
+  <input type="hidden" name="cus_country" value="Bangladesh">  
+  <input type="hidden" name="cus_phone" value="99999">
+  <input type="hidden" name="shipping_method" value="NO">  
+  <input type="hidden" name="product_name" value="webtheme">  
+  <input type="hidden" name="product_category" value="theme">  
+  <input type="hidden" name="product_profile" value="non-physical-goods">
+  <input name='submit' type='submit' value='Checkout'/>
+
+  </form>
+
+
+</div>
+
+ <script type="text/javascript">
+
+ </script>
+
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href={% static 'blog/font_awesome_css/all.css' %} rel="stylesheet" type="text/css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body> 
+<style>
+/* Style the links inside the navigation bar */
+</style>
+   <nav class="navbar navbar-expand-sm navbar-light bg-light navbar-center">
+
+    <button class="buttonload btn text-secondary">
+    <i class="fa fa-spinner fa-spin"></i> DarkWhisper Tamplate Loaded
+    </button>
+
+       <button class="navbar-toggler bg-light d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+           aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="collapsibleNavId">
+           <ul class="navbar-nav ml-auto mr-2 mt-lg-0">
+
+               <li class="nav-item active">
+                  <a class="nav-link font-weight-bold  text-secondary" href="{% url 'blog:blog-home' %}" >&nbsp;<i class="fas fa-home"></i>&nbsp;Home</a>
+               </li>
+
+               <li class="nav-item active">
+                   <a class="nav-link font-weight-bold  text-secondary" download="" href="https://drive.google.com/uc?id=1diRxRz1hJ6Y6JWW3omrBbfSLHN-99jW2&export=download">&nbsp;<i class="fas fa-download"></i>&nbsp;Download</a>
+               </li>
+
+               <li class="nav-item active">
+                   <a class="nav-link font-weight-bold text-secondary" href="#">&nbsp;<i class="fas fa-desktop"></i>&nbsp;Desktop-View</a>
+               </li>
+
+               <li class="nav-item active">
+                   <a class="nav-link font-weight-bold text-secondary" href="#">&nbsp;<i class="fas fa-mobile"></i>&nbsp;Mobile-View</a>
+               </li>
+
+                <li class="nav-item active">
+                   <a class="nav-link font-weight-bold text-secondary" href="#">&nbsp;<i class="fas fa-share-alt"></i>&nbsp;Share</a>
+                </li>
+             
+           </ul>
+       </div>
+   </nav>
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+</html>

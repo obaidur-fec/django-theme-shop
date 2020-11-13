@@ -10,9 +10,9 @@ This project is all about:
 
 # Django payment:
 
-1-Pypal
+1-Paypal
 
-2-stripe
+2-Stripe
 
 3-bkash(only for Bangladesh)
 

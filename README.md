@@ -1,22 +1,20 @@
 # django-theme-shop
 
-This project is all about: 
+# This project is all about: 
 
-**Django_Shoping_Cart_System**
+1. Django Shoping Cart System
 
-**Django_Payment_System**
+2. Django Payment System
 
-**django_user_System**
+3. django user System
 
-# Django payment:
+4. Paypal
 
-1-Paypal
+5. Stripe
 
-2-Stripe
+6. bkash(only for Bangladesh)
 
-3-bkash(only for Bangladesh)
-
-4-SSLCOMMERZ(only For Bangladesh)
+7. SSLCOMMERZ(only For Bangladesh)
 
 
 # Install:

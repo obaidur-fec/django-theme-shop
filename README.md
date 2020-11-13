@@ -19,14 +19,13 @@
 
 # Install:
 
-Create: **Virtualenv**
+A. Create virtualenv , activate virtualenv [ (your virtulenv dir name)/scripts/activate ]
 
-And than Active Your virtualenv dir
+B. cd /projects
 
-**than type**:
+C. pip install -r requirements.txt
 
-**pip install -r requirements.txt**
+D. python manage.py runserver
 
-**cd /project**
+E. http://127.0.0.1:8000/
 
-**python manage.py runserver**

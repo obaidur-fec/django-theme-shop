@@ -12,9 +12,7 @@
 
 5. Stripe
 
-6. bkash(only for Bangladesh)
-
-7. SSLCOMMERZ(only For Bangladesh)
+7. SSLCOMMERZ(only For Bangladesh (not 100% working need some bugging and Code))
 
 ![Optional Text](https://github.com/mohammadfayaj/django-theme-shop/blob/mohammadfayaj-patch-1/Screenshot%20(10).png)
 
@@ -37,3 +35,4 @@ D. python manage.py runserver
 
 E. http://127.0.0.1:8000/
 
+F. admin username: darkwhisper pass: 2536

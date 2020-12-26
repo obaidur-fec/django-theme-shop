@@ -16,7 +16,7 @@
 
 7. SSLCOMMERZ(only For Bangladesh)
 
-![Optional Text](Screenshot (10).png)
+![Optional Text](https://github.com/mohammadfayaj/django-theme-shop/blob/mohammadfayaj-patch-1/Screenshot%20(10).png)
 
 ![Optional Text](Screenshot (8).png)
 

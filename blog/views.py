@@ -8,9 +8,6 @@ def home(request):
     return render(request, 'blog/home.html')
 
 
-
-
-
 class PostListView(ListView):
     model = comment
     comment_show = comment.objects.all()

@@ -22,7 +22,6 @@ from django.conf.urls.static import static
 # namespace='cart',
 urlpatterns = [
     path('check_out/', include('checkout.urls', namespace='checkout')),
-    path('skril-paymant/', include('skrill.urls', namespace='skrill')),
     path('cart/', include('Cart.urls', namespace='Cart')),
     path('pro_theme/', include('pro_theme.urls',namespace='pro_theme')),
     path('', include('blog.urls', namespace='blog')),

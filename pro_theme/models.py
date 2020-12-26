@@ -17,6 +17,3 @@ class ProductItem(models.Model):
 
     class meta:
         ordering = ['date_added']
-    
-    # def subtotal(self):
-    #     return  self.price + self.price

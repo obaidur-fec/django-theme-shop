@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'skrill.apps.SkrillConfig',
     'checkout.apps.CheckoutConfig',
     'Cart.apps.CartConfig',
     'pro_theme.apps.ProThemeConfig',

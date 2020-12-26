@@ -10,13 +10,11 @@ from sslcommerz_lib import SSLCOMMERZ
 from sslcommerz_lib import __init__
 from django.http import HttpResponse
 from urllib3 import PoolManager
-
-
+from django.contrib.auth.decorators import login_required
 
 stripe.api_key = "sk_test_jVIR6VuioBkrbrOQwjcFD69s00upySTVnd"
 
-
-
+@login_required(login_url='users-login')
 def CheckOut(request):
     if request.user.is_authenticated:
         order = Carts.objects.get(user= request.user)
@@ -40,37 +38,13 @@ def Charge(request, *args , **kwargs):
         	)
     return render(request, "checkout/charge.html")
    
-
-def Bkash(request):
-    order = Carts.objects.get(user= request.user)
-    return render(request, 'checkout/bkash.html' , {'cart': order})
-
 def Paypal(request):
     order = Carts.objects.get(user= request.user)
     return render(request, 'checkout/paypal.html' , {'cart': order})
 
-def Skrill(request):
-    # if request.method == 'POST':
-    # print('Data' , request.POST)
-    # order = Carts.objects.get(user=request.user)
-    # charge = Skrill.Charge.create(
-    #     amount = order.cart_price() * 100 ,
-    #     currency = 'usd',
-    #     description = 'Pyment',
-    #     source = request.POST['stripeToken'],
-
-    #     )
-    order = Carts.objects.get(user= request.user)
-    return render(request, "checkout/Skrill.html", {'cart': order})
-
-
 def chargess(request):
     order = Carts.objects.get(user= request.user)
     return render(request, 'checkout/ss.html' , {'cart': order})
-
-def towcheckout(request):
-    order = Carts.objects.get(user= request.user)
-    return render(request, 'checkout/towcheckout.html' , {'cart': order})
 
 def Sslcommerz(request):
     if request.method == "POST":
@@ -100,7 +74,3 @@ def Sslcommerz(request):
         return render(request, 'checkout/ss.html', {'post_body': post_body})
     order = Carts.objects.get(user= request.user)
     return render(request, 'checkout/sslcommerz.html', {'cart': order})
-
-def ss(request):
-    order = Carts.objects.get(user= request.user)
-    return render(request, 'checkout/ss.html' , {'cart': order})

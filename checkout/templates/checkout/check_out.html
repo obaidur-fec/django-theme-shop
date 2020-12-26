@@ -3,8 +3,6 @@
 {% load static %}
 
 <script src="https://js.stripe.com/v3/"></script>
-<script src="https://scripts.sandbox.bka.sh/versions/1.2.0-beta/checkout/bKash-checkout-sandbox.js"></script>
-
 
 <style type="text/css">
 
@@ -67,8 +65,6 @@
 
   <div class="row">
     <div class="col">
-    <a class='btn btn-danger  mt-3 btn-lg font-weight-bold' href="{% url 'checkout:Bkash_pyment' %}">Bkash 
-    <small class="text-light">(Only For Bangladesh)</small></a>
     <a class='btn btn-primary mt-3 btn-lg font-weight-bold' href="{% url 'checkout:paypal_payment' %}"> <i class="fab fa-cc-paypal"></i> Paypal</a>
     <a class='btn btn-success mt-3 btn-lg font-weight-bold' href="{% url 'checkout:Sslcommerz_payment' %}">Skrill</a>
     </div>

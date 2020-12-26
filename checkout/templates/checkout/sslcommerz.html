@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
   </head>
-  <body>
+  <body class="container text-center mt-5">
 
-{{cart.cart_price}}
-<div class="row">
+<div class="">
   <form id="payment_gw" name="payment_gw" method="POST" action="https://sandbox.sslcommerz.com/EasyCheckOut/testcde649f15a0af477f36e449c86e5ac403c2" >
     {% csrf_token %}
   <input type='hidden' name='store_id' value='darkw5ec50255ccdb7'/>
@@ -33,7 +32,8 @@
   <input type="hidden" name="product_name" value="webtheme">  
   <input type="hidden" name="product_category" value="theme">  
   <input type="hidden" name="product_profile" value="non-physical-goods">
-  <input name='submit' type='submit' value='Checkout'/>
+  <p>Total Price: {{cart.cart_price}}</p>
+  <input name='submit' type='submit' value='Payment With sslcommerz'/>
 
   </form>
 

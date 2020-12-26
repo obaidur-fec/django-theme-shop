@@ -16,7 +16,7 @@
 
 7. SSLCOMMERZ(only For Bangladesh)
 
-![Optional Text](/master/myFolder/image.png)
+![Optional Text](blog/static/blog/images/44_–_3.png)
 
 # Install:
 

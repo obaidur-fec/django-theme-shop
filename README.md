@@ -16,8 +16,15 @@
 
 7. SSLCOMMERZ(only For Bangladesh)
 
-![Optional Text](blog/static/blog/images/44_–_3.png)
+![Optional Text](Screenshot (10).png)
 
+![Optional Text](Screenshot (8).png)
+
+![Optional Text](Screenshot (9).png)
+
+![Optional Text](Screenshot (12).png)
+
+![Optional Text](Screenshot (11).png)
 # Install:
 
 A. Create virtualenv , activate virtualenv [ (your virtulenv dir name)/scripts/activate ]
